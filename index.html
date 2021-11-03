@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redux</title>
+</head>
+
+<body>
+
+    <!-- <h1>Total: <span id="conta">0</span></h1>
+
+    <input type="number">
+
+    <button id="somar">SOMAR</button>
+    <button id="incrementar">INCREMENTAR</button>
+
+    <button id="abrir">ABRIR</button>
+    <button id="fechar">FECHAR</button> -->
+
+    <!-- <div id="box" style="background-color: blue; width: 10px; height: 100px; "></div> -->
+    <script src="./redux.min.js"></script>
+    <script src="./immer.min.js"></script>
+
+    <script>
+        // const array1 = ['a', 'b', 'c', 'd']
+
+        // const obj1 = { nome: 'Victor', idade: 19 }
+
+
+        // const obj2 = immer.produce(obj1, (draft) => {
+        //     draft.idade = 30
+        // });
+
+        // function mudarIdade(obj, idade) {
+        //     return { ...obj, idade }
+        // }
+
+        // const obj3 = mudarIdade(obj1, 50);
+
+        // console.log(obj1)
+        // console.log(obj2)
+        // console.log(obj3)
+
+        const initialState = {
+            nome: 'Victor',
+            idade: 29
+        }
+
+        const reducer = immer.produce((state, action) => {
+
+            switch (action.type) {
+                case "MUDAR_NOME":
+                    state.nome = action.payload
+                    break;
+                case "MUDAR_IDADE":
+                    state.idade = action.payload
+                    break;
+
+            }
+
+        }, initialState)
+
+        const store = Redux.createStore(
+            reducer,
+            window.__REDUX_DEVTOOLS_EXTENSION__ && __REDUX_DEVTOOLS_EXTENSION__()
+        );
+        const state = store.getState();
+
+        store.dispatch({ type: "MUDAR_NOME", payload: "Joao" })
+        store.dispatch({ type: "MUDAR_NOME", payload: "Joca" })
+        store.dispatch({ type: "MUDAR_NOME", payload: "Diego" })
+
+        console.log(state)
+
+
+    </script>
+</body>
+
+</html>
