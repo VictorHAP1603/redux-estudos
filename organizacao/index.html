@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organização Redux</title>
+</head>
+
+<body>
+
+
+    <h1>Total: <span id="total"></span></h1>
+
+    <button id="incre">INCREMENTAR</button>
+    <button id="redu">REDUZIR</button>
+
+    <script src="../redux.min.js"></script>
+
+    <script type="module">
+        import { store } from './store/configureStore.js'
+        import { incrementar, reduzir } from './store/reducers/contador.js'
+
+        const bIncre = document.getElementById('incre')
+        const bRedu = document.getElementById('redu')
+
+        const spanTotal = document.getElementById('total')
+
+
+        function render() {
+            const { contadorReducer } = store.getState();
+            spanTotal.innerHTML = contadorReducer
+        }
+
+        render();
+        const unsubscribe = store.subscribe(render)
+
+        bIncre.addEventListener('click', () => store.dispatch(incrementar()))
+        bRedu.addEventListener('click', () => store.dispatch(reduzir()))
+
+    </script>
+</body>
+
+</html>
