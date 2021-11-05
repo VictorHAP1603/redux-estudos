@@ -16,28 +16,28 @@
     <button id="incre">INCREMENTAR</button>
     <button id="redu">REDUZIR</button>
 
-    <script src="../redux.min.js"></script>
+    <!-- <script src="../redux.min.js"></script> -->
 
     <script type="module">
-        import { store } from './store/configureStore.js'
-        import { incrementar, reduzir } from './store/reducers/contador.js'
+        // import { store } from './store/configureStore.js'
+        // import { incrementar, reduzir } from './store/reducers/contador.js'
 
-        const bIncre = document.getElementById('incre')
-        const bRedu = document.getElementById('redu')
+        // const bIncre = document.getElementById('incre')
+        // const bRedu = document.getElementById('redu')
 
-        const spanTotal = document.getElementById('total')
+        // const spanTotal = document.getElementById('total')
 
 
-        function render() {
-            const { contadorReducer } = store.getState();
-            spanTotal.innerHTML = contadorReducer
-        }
+        // function render() {
+        //     const { contadorReducer } = store.getState();
+        //     spanTotal.innerHTML = contadorReducer
+        // }
 
-        render();
-        const unsubscribe = store.subscribe(render)
+        // render();
+        // const unsubscribe = store.subscribe(render)
 
-        bIncre.addEventListener('click', () => store.dispatch(incrementar()))
-        bRedu.addEventListener('click', () => store.dispatch(reduzir()))
+        // bIncre.addEventListener('click', () => store.dispatch(incrementar()))
+        // bRedu.addEventListener('click', () => store.dispatch(reduzir()))
 
     </script>
 </body>

@@ -19,10 +19,17 @@
 
     <button id="abrir">ABRIR</button>
     <button id="fechar">FECHAR</button> -->
+    <ul>
+        <li id="item1" data-slide="1">item1</li>
+        <li id="item2" data-slide="2">item2</li>
+        <li id="item3" data-slide="3">item3</li>
+    </ul>
 
     <!-- <div id="box" style="background-color: blue; width: 10px; height: 100px; "></div> -->
     <script src="./redux.min.js"></script>
     <script src="./immer.min.js"></script>
+
+    <script src="./middleware/script.js"></script>
 
     <script>
         // const array1 = ['a', 'b', 'c', 'd']
@@ -44,36 +51,36 @@
         // console.log(obj2)
         // console.log(obj3)
 
-        const initialState = {
-            nome: 'Victor',
-            idade: 29
-        }
+        // const initialState = {
+        //     nome: 'Victor',
+        //     idade: 29
+        // }
 
-        const reducer = immer.produce((state, action) => {
+        // const reducer = immer.produce((state, action) => {
 
-            switch (action.type) {
-                case "MUDAR_NOME":
-                    state.nome = action.payload
-                    break;
-                case "MUDAR_IDADE":
-                    state.idade = action.payload
-                    break;
+        //     switch (action.type) {
+        //         case "MUDAR_NOME":
+        //             state.nome = action.payload
+        //             break;
+        //         case "MUDAR_IDADE":
+        //             state.idade = action.payload
+        //             break;
 
-            }
+        //     }
 
-        }, initialState)
+        // }, initialState)
 
-        const store = Redux.createStore(
-            reducer,
-            window.__REDUX_DEVTOOLS_EXTENSION__ && __REDUX_DEVTOOLS_EXTENSION__()
-        );
-        const state = store.getState();
+        // const store = Redux.createStore(
+        //     reducer,
+        //     window.__REDUX_DEVTOOLS_EXTENSION__ && __REDUX_DEVTOOLS_EXTENSION__()
+        // );
+        // const state = store.getState();
 
-        store.dispatch({ type: "MUDAR_NOME", payload: "Joao" })
-        store.dispatch({ type: "MUDAR_NOME", payload: "Joca" })
-        store.dispatch({ type: "MUDAR_NOME", payload: "Diego" })
+        // store.dispatch({ type: "MUDAR_NOME", payload: "Joao" })
+        // store.dispatch({ type: "MUDAR_NOME", payload: "Joca" })
+        // store.dispatch({ type: "MUDAR_NOME", payload: "Diego" })
 
-        console.log(state)
+        // console.log(state)
 
 
     </script>

@@ -1,0 +1,6 @@
+[submodule "redux-desafio-origamid"]
+	path = redux-desafio-origamid
+	url = https://github.com/VictorHAP1603/redux-desafio-origamid
+[submodule "desafios/desafios01"]
+	path = desafios/desafios01
+	url = https://github.com/VictorHAP1603/redux-desafio-origamid
